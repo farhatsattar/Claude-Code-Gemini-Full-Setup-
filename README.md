@@ -31,8 +31,8 @@ mkdir $HOME/.claude
 🔥 STEP 4 — CREATE CONFIG.JSON (WINDOWS VERSION)
 Windows me cat << EOF work nahi karta, isliye Notepad method use hoga.
 
-Run:
 
+Run:
 notepad $HOME/.claude-code-router/config.json
 Notepad open hoga → isme ye exact JSON paste karein:
 
