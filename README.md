@@ -6,35 +6,49 @@ This guide helps you set up Claude-Code + Gemini Models together using
 claude-code + claude-code-router.
 
 🔥 STEP 0 — Confirm Node.js
+
 PowerShell open karein → run:
 
 node --version
+
 Agar 18+ version nahi hai → install karein:
 
 👉 https://nodejs.org
 
 🔥 STEP 1 — GET GOOGLE API KEY
+
 Open: https://aistudio.google.com
 Click → Get API Key
 Click → Create API Key
 Key copy kar len (example):
 AIzaSy........
+
+
 🔥 STEP 2 — INSTALL REQUIRED TOOLS
+
 PowerShell (Run as Administrator):
 
 npm install -g @anthropic-ai/claude-code @musistudio/claude-code-router
+
+
 🔥 STEP 3 — CREATE CONFIG FOLDERS
+
 PowerShell (normal mode):
 
 mkdir $HOME/.claude-code-router
 mkdir $HOME/.claude
+
+
 🔥 STEP 4 — CREATE CONFIG.JSON (WINDOWS VERSION)
+
 Windows me cat << EOF work nahi karta, isliye Notepad method use hoga.
 
 
 Run:
+
 notepad $HOME/.claude-code-router/config.json
 Notepad open hoga → isme ye exact JSON paste karein:
+
 
 {
   "LOG": true,
@@ -68,25 +82,33 @@ Notepad open hoga → isme ye exact JSON paste karein:
 ✔ Close
 
 🔥 STEP 5 — SET YOUR API KEY (WINDOWS METHOD)
+
 PowerShell (Run as Admin):
+
 
 [System.Environment]::SetEnvironmentVariable('GOOGLE_API_KEY', 'YOUR_KEY_HERE', 'User')
 Replace:
+
 
 YOUR_KEY_HERE
 With your actual Google API Key.
 
 Example:
 
+
 [System.Environment]::SetEnvironmentVariable('GOOGLE_API_KEY', 'AIzaSyXXXXX...', 'User')
 ⚠️ IMPORTANT
 PowerShell close karen → new PowerShell open → check:
 
+
 echo $env:GOOGLE_API_KEY
+
 Agar value show ho jaye → Perfect! 🔥
 
 🔥 STEP 6 — VERIFY EVERYTHING
+
 Run:
+
 
 claude --version
 ccr version
@@ -94,9 +116,11 @@ echo $env:GOOGLE_API_KEY
 Agar sab commands ka output aa jaye → ✔ Setup success
 
 🔥 STEP 7 — DAILY WORKFLOW
+
 Terminal 1:
 ccr start
 Wait until you see:
+
 
 ✔ Service started successfully
 Terminal 2:
@@ -104,10 +128,13 @@ cd your-project-folder
 ccr code
 OR:
 
+
 eval "$(ccr activate)"
+
 claude
 🔥 VERIFICATION TEST
 Terminal:
+
 
 ccr code
 Then type:
